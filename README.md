@@ -1,1 +1,1 @@
-# Gator-Equation-Solver
+# OCR_equation_solver
