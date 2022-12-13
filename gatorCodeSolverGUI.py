@@ -1,3 +1,11 @@
+"""
+Author @Ninad Bhagwat
+Master's Student in Mechanical and Aerospace Engineering
+University of Florida
+Dec, 2022
+
+"""
+
 # Import Packages
 
 from PyQt5.QtWidgets import *

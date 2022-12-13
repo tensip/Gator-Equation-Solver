@@ -11,13 +11,24 @@ import os
 
 # loading images and preprocessing
 def load_images_from_folder(folder):
+    '''Download the raw images and preprocess it
+    
+    Parameter:
+        folder (str): the directory of the folder
+    Return: 
+        train_data (list): a list contains a number of RGB values for each pixel. The dimension is (28*28,1)
+        
+    '''
+    # Create empty list
     train_data = []
+
     kernel = np.ones((3,3), np.uint8)
     # width 
     w = 28
     # height
     h = w
-
+    
+    # loop in the folder
     for i, filename in enumerate(os.listdir(folder)):
         img = cv2.imread(os.path.join(folder,filename),cv2.IMREAD_GRAYSCALE)
         img = ~img
@@ -171,10 +182,5 @@ for i, each in enumerate(data16):
 
 data = np.concatenate((data,data16))
 
+# save data as .npy file
 np.save('data_for_training', data)
-
-# # Converting to csv_file
-# df = pd.DataFrame(data, index=None)
-# df.to_csv('data_for_training.csv',index=False)
-
-print(data.shape)
