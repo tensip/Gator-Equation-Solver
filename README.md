@@ -21,7 +21,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This report is part of the final project in the
+The objective of this project is to get the solution and the plot of a "Two Variable Linear Equation" by uploading the hadwritten image of the equation. The program performs pre-processing on the image usiing openCV so that Optical Character Recognition (OCR) can be performed using pyTorch Neural Networks. The result of the OCR is the equation in the string format. Once the equation is converted into the string, the equation can be solved by using sympy/numpy. Since its a two variable equation, user needs to provide values for one of the equations. The equation solver solves for the other values and also plots the graph for the visualization. Since its a linear equation, a straight line plot is obtained. For the convenience, the plot can be zoomed in, zoomed out or panned.  
 
 <!-- GETTING STARTED -->
 ## Getting Started
