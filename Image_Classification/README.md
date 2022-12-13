@@ -4,6 +4,8 @@ The image classification folder was created for training convolutional neural ne
 
 **All files and folders in this part are not necessary for the GUI. You don't need to run anything here. The purpose of this `Image_Classification` folder is to illustrate what we have done so far before getting the best weight file for model**
 
+### About the image classification
+
 1. `data.7z` -- This file includes the handwriting images which are used for training the neural networks. The file need to be extracted before using it.
     
 2. `Data_extracting.py` -- Download images from `data` folder which is extracted from `data.7z`, preprocess images, assign the label to the images, and save it as `data_for_train.npy` file
