@@ -135,7 +135,7 @@ class Window(QWidget):
     def getEquation(self):
 
         # clear the old segmented images from the 'segmented' folder
-        
+
         clear_and_segment(self.fname[0])
         ocrResult = img2string('Image_Segmentation/segmented')
         self.equationLabel.setText("Equation :" + f"{ocrResult}")
@@ -168,7 +168,7 @@ class Window(QWidget):
         for value in array:
             result = sol[0].subs(a, value)
             resultList.append(round(float(result), 2))
-            print(resultList)
+        print(resultList)
         self.resultLabel.setText("b values =" + f"{resultList}")
 
         # Creating and Stylizing the plot
