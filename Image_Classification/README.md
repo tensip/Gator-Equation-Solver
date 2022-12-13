@@ -4,10 +4,6 @@ The image classification folder was created for training convolutional neural ne
 
 **All files and folders in this part are not necessary for the GUI. You don't need to run anything here. The purpose of this `Image_Classification` folder is to illustrate what we have done so far before getting the best weight file for model**
 
-### The procedure of claasifying the image
-1. Download the handwriting images from -
-
-
 ### About the image classification
 
 1. `data.7z` -- This file includes the handwriting images which are used for training the neural networks. The file need to be extracted before using it.
@@ -22,3 +18,14 @@ The image classification folder was created for training convolutional neural ne
 
 6. `modelX.pth` -- The best model that is generated from the `train_CNN.ipynb` file. There are 2 model which are `model1.pth` and `model4.pth`. The default model that is used in this project is `model1.pth`.
 
+### The procedure of classifying an image
+
+1. Download the handwriting images from - https://www.kaggle.com/datasets/xainano/handwrittenmathsymbols?resource=download
+
+2. Cut off some math signs that are not needed for our project
+
+3. Run `Data_extracting.py` to preprocess images from dataset and save it as `data_for_training.npy`
+
+4. Train the model by running `train_CNN.ipynb`. Adjust some hyperparameters such as BATCH_SIZE, EPOCHS, LEARNING RATE, NUMBER_OF_LAYERS, NUMBER_OF_NODES to receive the model.
+
+5. Save the model and test the accuracy of it by running `test_CNN.ipynb`
