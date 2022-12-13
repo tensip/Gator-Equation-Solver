@@ -1,21 +1,34 @@
-from Image_Segmentation.CNN.CNN_1 import CNN
+"""
+Author @Sippapas Sukpholtham
+Master's Student in Mechanical and Aerospace Engineering
+University of Florida
+Dec, 2022
+
+"""
+
+from CNN.CNN_1 import CNN
 
 import numpy as np
 import torch
 import cv2
 import os
 
+# Activate the model
 cnn = CNN()
 
-cnn.load_state_dict(torch.load('Image_Segmentation/CNN/model1.pth', map_location=torch.device('cpu')), strict=True)
-
-# img = cv2.imread('segmented/char_0.jpg', cv2.IMREAD_GRAYSCALE)
-# print(img.shape)
+# Load the weights of the trained model
+cnn.load_state_dict(torch.load('CNN/model1.pth', map_location=torch.device('cpu')), strict=True)
 
 
 def img2label(image):
-    '''input --> image with dimesion (28,28)
-       output --> predicted label of the image from Neural Network'''
+    '''Interpreting the input image to label 
+    
+    Parameter:
+        image (str): the path of the image that user want to input, the dimension of the image need to be (28,28)
+    Return:
+        predicted_label (int): the predicted label from Convolutional Neural Networks
+    
+    '''
     # read an image
     img = cv2.imread(image, cv2.IMREAD_GRAYSCALE)
 
@@ -28,10 +41,9 @@ def img2label(image):
     # reshape an image
     img = img.reshape(1, 1, 28, 28)
 
+    
     cnn.eval()
-
     output = cnn(img)[0]
-
     _, prediction = torch.max(output, 1)
 
     # the predicted label
@@ -40,8 +52,14 @@ def img2label(image):
     return predicted_label
 
 def label2string(label):
-    '''input --> the predicted output from neural network
-       output --> string of the input label'''
+    '''Interpreting the label (output) received from CNN to a readable equation string
+    
+    Parameter:
+        label (int): the predicted output from CNN
+    Return:
+        character (str): string of the input label
+    
+    '''
     
     if label == 0:
         character = "0"
@@ -77,10 +95,18 @@ def label2string(label):
         character = "/"
     elif label == 16:
         character = "="
-    
+
     return character
 
 def img2string(folder):
+    '''Reading images which were segmented in the folder
+
+    Parameter:
+        folder (str): the path of the folder containing segmented images
+    Return:
+        str_equation (str): the equation which was interpreted from the folder
+    
+    '''
     str_equation = ""
     for file in os.listdir(folder):
         predicted_label = img2label(os.path.join(folder, file))
@@ -90,10 +116,3 @@ def img2string(folder):
         str_equation = str_equation + character
     
     return str_equation
-
-# # Testing the code
-# def main():
-#     eq = img2string('segmented')
-#     print(eq)
-# if __name__=="__main__":
-#     main()
