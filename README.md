@@ -56,7 +56,7 @@ Follow the instructions to run the project:
 
 5) In the GUI window, click the "Get Equation" button. This will return and show the string format of the equation in the image.
 
-6) Since we are working only on "Two variables linear equations", we need to provide values for one of the variables. Provide the values for the variable using "space separation". 
+6) Since we are working only on "Two variables linear equations", we need to provide values for one of the variables. Provide the values for the variable using "space separation". Also, **this program only recognizes variables "a" and "b"**.
    Example - put "1 2 3 4 5 45 67" for the values "1, 2, 3, 4, 5, 45, 67" etc.
    
 7) In the GUI window, click the "Get Result" button. This will return the values for the other variable and will also plot a graph of the two variable values. You can zoom in, zoom out and pan the plot for your convenience.
