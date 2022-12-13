@@ -7,7 +7,7 @@ from sympy import symbols, Eq, solve, sympify
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import pyqtgraph as pg
-from Image_Segmentation.data_segmentation import remove_files, image_segmentation
+from Image_Segmentation.data_segmentation import clear_and_segment
 from Image_Segmentation.imgTOstring import img2string
 
 
@@ -135,9 +135,8 @@ class Window(QWidget):
     def getEquation(self):
 
         # clear the old segmented images from the 'segmented' folder
-
-        remove_files('Image_Segmentation/segmented')
-        image_segmentation(self.fname[0])
+        
+        clear_and_segment(self.fname[0])
         ocrResult = img2string('Image_Segmentation/segmented')
         self.equationLabel.setText("Equation :" + f"{ocrResult}")
 
@@ -147,8 +146,7 @@ class Window(QWidget):
 
         # clear the old segmented images from the folder and add the new ones
 
-        remove_files('Image_Segmentation/segmented')
-        image_segmentation(self.fname[0])
+        clear_and_segment(self.fname[0])
         ocrResult = img2string('Image_Segmentation/segmented')
 
         # Equation Solver
