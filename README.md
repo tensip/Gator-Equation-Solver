@@ -1,21 +1,40 @@
-# Gator-Equation-Solver
+# Description
 
-This resporitory includes *three* main folders
+This repository includes 3 main files
+1. **train.ipynb** -- This file uses to train and validate to find the best model for recognizing 10 handwriting letters where the label of each letter as shown in the table below.
 
-### Image_Classification 
-The image classification folder was created for training convolutional neural network needed to be used for classifying the images. After finishing training the model, we also need to test the performance of the model. The training and testing model performance continued until we found the model that has the most accuracy (the best model).
+<div align="center">
 
-1. `data` -- This folder includes the handwriting images which are used for training the neural networks
-    
-2. `Data_extracting.py` -- Download images from `data`, preprocess the training images, assign the label to the images, and save it as `data_for_train.npy` file
+| letter | label |
+|:-:|:-:|
+| a | 0 |
+| b | 1 |
+| c | 2 |
+| d | 3 |
+| e | 4 |
+| f | 5 |
+| g | 6 |
+| h | 7 |
+| $ | 8 |
+| # | 9 | 
 
-3. `train_CNN.ipynb` -- This file uses to train and validate to find the best model for handwriting math solver.
+</div>
 
-4. `model.pth` -- The best model that is generated from the `train_CNN.ipynb` file. 
+2. **test.ipynb** -- This file can be run to test any input data and label.
+3. **Final_weights.pth** -- Weights data which was received from the training file.
 
-5. `test_CNN.ipynb` -- This file can be run to test any input data.
+# Implementation
 
-### Image_Segmentation
-The input for the hand-writing equation solver is the *whole* equation including numbers and math signs. Therfore, the image need to be segmented before classifying characters.
+1. Open the 'test.ipynb' file
+2. At the 'Loading data' section, change the file name from 'data_train.npy' and 'labels_train.npy' to any data and labels file.
+3. Hit run all cells!!
 
-### GUI
+
+# Dependencies
+
+- matplotlib     - 3.5.1
+- numpy          - 1.21.5
+- opencv         - 4.5.5.64
+- scikit-learn   - 1.0.2
+- torch          - 1.11.0
+
