@@ -7,6 +7,7 @@ dependencies:
   - console_shortcut
   - sympy
   - pyqtgraph
-  - opencv
   - pytorch
+  - pip:
+    - opencv-python
 prefix: C:\Users\ninad\anaconda3\envs\OCR_equation_solver
