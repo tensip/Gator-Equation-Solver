@@ -13,7 +13,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import pyqtgraph as pg
 
-from Image_Segmentation.data_segmentation import rm_files_and_segment
+from Image_Segmentation.data_segmentation import remove_files, image_segmentation
 from Image_Segmentation.imgTOstring import img2string
 
 class Window(QWidget):
@@ -105,6 +105,7 @@ class Window(QWidget):
     # Image selection dialogue box
     def getImage(self):
         self.fname = QFileDialog.getOpenFileName(self, "Open File", "/home","Images (*.png *.xpm *.jpg)")
+        #print(type(self.fname))
         imagePath = self.fname[0]
         pixmap = QPixmap(imagePath).scaledToHeight(75)
         self.imageLabel.setPixmap(QPixmap(pixmap))
@@ -112,15 +113,17 @@ class Window(QWidget):
     # Equation from OCR    
     def getEquation(self):
         # clear the old segmented images from the 'segmented' folder
-        rm_files_and_segment(self.fname[0])
-        ocrResult = img2string('Image-Segmentation/segmented')
+        remove_files('Image_Segmentation/segmented')
+        image_segmentation(self.fname[0])
+        ocrResult = img2string('Image_Segmentation/segmented')
         self.equationLabel.setText("Equation :" + f"{ocrResult}")
         
     # Calculation and plotting graphs    
     def getResult(self):
         # clear the old segmented images from the 'segmented' folder
-        rm_files_and_segment(self.fname[0])
-        ocrResult = img2string('Image-Segmentation/segmented')
+        remove_files('Image_Segmentation/segmented')
+        image_segmentation(self.fname[0])
+        ocrResult = img2string('Image_Segmentation/segmented')
         aValues = self.aLabel.text()
         print(aValues)
         a,b = symbols("a b")
