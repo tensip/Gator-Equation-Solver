@@ -1,6 +1,4 @@
-# Final Project
-
-This is a **group assignment**.
+# OCR_equation_solver
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
