@@ -8,7 +8,7 @@ The image segmentation folder was created for segmenting the hand-writing equati
     - `CNN_1.py` -- The first designed convolutional neural networks and the one that is used for this project
     - `CNN_2.py` -- The second designed convolutional neural networks.
     - `model1.pth` -- The copied weight model from `Image_Classification` folder
-    - `model4.pth` -- The copied weight model from `Image_Classification` folder
+    - `model2.pth` -- The copied weight model from `Image_Classification` folder
 
 2. `segmented` -- This folder contains segmented characters from the equation
 

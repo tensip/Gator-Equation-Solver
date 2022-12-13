@@ -16,7 +16,7 @@ The image classification folder was created for training convolutional neural ne
 
 5. `test_CNN.ipynb` -- This file can be run to test any input data.
 
-6. `modelX.pth` -- The best model that is generated from the `train_CNN.ipynb` file. There are 2 model which are `model1.pth` and `model4.pth`. The default model that is used in this project is `model1.pth`.
+6. `modelX.pth` -- The best model that is generated from the `train_CNN.ipynb` file. There are 2 model which are `model1.pth` and `model2.pth`. The default model that is used in this project is `model1.pth`.
 
 ### The procedure of classifying an image
 

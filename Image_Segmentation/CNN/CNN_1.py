@@ -1,6 +1,14 @@
+"""
+Author @Sippapas Sukpholtham
+Master's Student in Mechanical and Aerospace Engineering
+University of Florida
+Dec, 2022
+
+"""
+
 import torch.nn as nn
 
-# CNN for model2.pth
+# CNN for model1.pth
 
 class CNN(nn.Module):
     def __init__(self):
