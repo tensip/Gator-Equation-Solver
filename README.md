@@ -38,9 +38,9 @@ In this section all libraries, packages and other dependencies that need to be i
    ```
    
 2. Setup (and activate) your environment
-  ```sh
-  conda env create -f environment.yml
-  ```
+   ```sh
+   conda env create -f environment.yml
+   ```
 
 ### Usage
 
