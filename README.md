@@ -71,6 +71,4 @@ Sippapas Sukpholtham - s.sukpholtham@ufl.edu
 
 Ninad Bhagwat - n.bhagwat@ufl.edu
 
-Soham Bombale - s.bombale@ufl.edu
-
 ### Thank you
